@@ -1,0 +1,37 @@
+{
+  "iotgw2App": {
+    "processor": {
+      "home": {
+        "title": "Processors",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Processor",
+        "createOrEditLabel": "Create or edit a Processor",
+        "notFound": "No Processors found"
+      },
+      "created": "A new Processor is created with identifier {{ param }}",
+      "updated": "A Processor is updated with identifier {{ param }}",
+      "deleted": "A Processor is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Processor {{ id }}?"
+      },
+      "detail": {
+        "title": "Processor"
+      },
+      "id": "ID",
+      "name": "Name",
+      "example": "Example",
+      "description": "Description",
+      "processorIterface": "Processor Iterface",
+      "implType": "Impl Type",
+      "param01": "Param 01",
+      "param02": "Param 02",
+      "source": "Source",
+      "signerName": "Signer Name",
+      "signature": "Signature",
+      "help": {
+        "name": "Unique name of the processor",
+        "description": "Optional description"
+      }
+    }
+  }
+}

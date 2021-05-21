@@ -1,0 +1,67 @@
+{
+  "name": "DeviceType",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "Unique name of the device type",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "javadoc": "Optional description"
+    },
+    {
+      "fieldName": "stateFieldName01",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateFieldName02",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateFieldName03",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateFieldName04",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "readAuthPattern",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "writeAuthPattern",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "processor",
+      "otherEntityRelationshipName": "deviceType",
+      "relationshipName": "enrollProcessor",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "messageType",
+      "otherEntityRelationshipName": "deviceTypes",
+      "relationshipName": "messageTypes",
+      "otherEntityField": "name",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "iot_device_type",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210521153826"
+}

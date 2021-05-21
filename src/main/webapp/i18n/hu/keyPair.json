@@ -1,0 +1,43 @@
+{
+  "iotgw2App": {
+    "keyPair": {
+      "home": {
+        "title": "KeyPairs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Egy új Key Pair létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Key Pairt",
+        "notFound": "No Key Pairs found"
+      },
+      "created": "Egy új Key Pair lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Key Pair módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Key Pair törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Key Pairt {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Key Pair"
+      },
+      "id": "ID",
+      "keyId": "Key Id",
+      "algorithm": "Algorithm",
+      "publicKey": "Public Key",
+      "privateKeyDescriptor": "Private Key Descriptor",
+      "attestationData": "Attestation Data",
+      "associatedCert": "Associated Cert",
+      "certificateRequest": "Certificate Request",
+      "certSubjectDN": "Cert Subject DN",
+      "certIssuerDN": "Cert Issuer DN",
+      "certSerial": "Cert Serial",
+      "certNotBefore": "Cert Not Before",
+      "certNotAfter": "Cert Not After",
+      "certRevoked": "Cert Revoked",
+      "help": {
+        "keyId": "SHA-1 hash of the ANS.1 encoded publicKey. Lowercase hex string without spaces.",
+        "publicKey": "ANS.1 encoded public key",
+        "attestationData": "ANS.1 encoded public key",
+        "associatedCert": "ANS.1 encoded certificate",
+        "certificateRequest": "ANS.1 encoded PKCS#10"
+      }
+    }
+  }
+}

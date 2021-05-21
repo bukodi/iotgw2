@@ -1,0 +1,40 @@
+{
+  "iotgw2App": {
+    "message": {
+      "home": {
+        "title": "Messages",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Egy új Message létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Messaget",
+        "notFound": "No Messages found"
+      },
+      "created": "Egy új Message lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Message módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Message törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Messaget {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Message"
+      },
+      "id": "ID",
+      "serverTime": "Server Time",
+      "deviceTime": "Device Time",
+      "rawMessageSHA256": "Raw Message SHA 256",
+      "rawMessage": "Raw Message",
+      "decryptedPayload": "Decrypted Payload",
+      "devToSrv": "Dev To Srv",
+      "indexFieldValue01": "Index Field Value 01",
+      "indexFieldValue02": "Index Field Value 02",
+      "indexFieldValue03": "Index Field Value 03",
+      "indexFieldValue04": "Index Field Value 04",
+      "processingError": "Processing Error",
+      "type": "Type",
+      "device": "Device",
+      "help": {
+        "rawMessageSHA256": "Hash of the message. lower case hex string",
+        "rawMessage": "Optional original encrypted message"
+      }
+    }
+  }
+}

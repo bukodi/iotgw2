@@ -1,0 +1,47 @@
+{
+  "iotgw2App": {
+    "device": {
+      "home": {
+        "title": "Devices",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Egy új Device létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Devicet",
+        "notFound": "No Devices found"
+      },
+      "created": "Egy új Device lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Device módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Device törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Devicet {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Device"
+      },
+      "id": "ID",
+      "visualId": "Visual Id",
+      "description": "Description",
+      "enrollmentCode": "Enrollment Code",
+      "enrollmentTime": "Enrollment Time",
+      "stateFieldValue01": "State Field Value 01",
+      "stateFieldValue02": "State Field Value 02",
+      "stateFieldValue03": "State Field Value 03",
+      "stateFieldValue04": "State Field Value 04",
+      "lastError": "Last Error",
+      "readAuthPattern": "Read Auth Pattern",
+      "writeAuthPattern": "Write Auth Pattern",
+      "deviceSignKey": "Device Sign Key",
+      "deviceEncKey": "Device Enc Key",
+      "serverSignKey": "Server Sign Key",
+      "serverEncKey": "Server Enc Key",
+      "nextServerSignKey": "Next Server Sign Key",
+      "nextServerEncKey": "Next Server Enc Key",
+      "type": "Type",
+      "orgUnit": "Org Unit",
+      "help": {
+        "visualId": "Unique id of the IoT device",
+        "description": "Optional description",
+        "enrollmentCode": "Unique random passphrase for first-time enrollment."
+      }
+    }
+  }
+}

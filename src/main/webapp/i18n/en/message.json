@@ -1,0 +1,40 @@
+{
+  "iotgw2App": {
+    "message": {
+      "home": {
+        "title": "Messages",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Message",
+        "createOrEditLabel": "Create or edit a Message",
+        "notFound": "No Messages found"
+      },
+      "created": "A new Message is created with identifier {{ param }}",
+      "updated": "A Message is updated with identifier {{ param }}",
+      "deleted": "A Message is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Message {{ id }}?"
+      },
+      "detail": {
+        "title": "Message"
+      },
+      "id": "ID",
+      "serverTime": "Server Time",
+      "deviceTime": "Device Time",
+      "rawMessageSHA256": "Raw Message SHA 256",
+      "rawMessage": "Raw Message",
+      "decryptedPayload": "Decrypted Payload",
+      "devToSrv": "Dev To Srv",
+      "indexFieldValue01": "Index Field Value 01",
+      "indexFieldValue02": "Index Field Value 02",
+      "indexFieldValue03": "Index Field Value 03",
+      "indexFieldValue04": "Index Field Value 04",
+      "processingError": "Processing Error",
+      "type": "Type",
+      "device": "Device",
+      "help": {
+        "rawMessageSHA256": "Hash of the message. lower case hex string",
+        "rawMessage": "Optional original encrypted message"
+      }
+    }
+  }
+}

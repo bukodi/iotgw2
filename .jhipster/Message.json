@@ -1,0 +1,85 @@
+{
+  "name": "Message",
+  "fields": [
+    {
+      "fieldName": "serverTime",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deviceTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "rawMessageSHA256",
+      "fieldType": "String",
+      "javadoc": "Hash of the message. lower case hex string",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "rawMessage",
+      "fieldType": "byte[]",
+      "javadoc": "Optional original encrypted message",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "decryptedPayload",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "devToSrv",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "indexFieldValue01",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indexFieldValue02",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indexFieldValue03",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indexFieldValue04",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "processingError",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "messageType",
+      "otherEntityRelationshipName": "message",
+      "relationshipValidateRules": "required",
+      "relationshipName": "type",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "device",
+      "otherEntityRelationshipName": "message",
+      "relationshipValidateRules": "required",
+      "relationshipName": "device",
+      "otherEntityField": "visualId"
+    }
+  ],
+  "entityTableName": "iot_message",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210521153830"
+}

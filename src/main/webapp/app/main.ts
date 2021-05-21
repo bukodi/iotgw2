@@ -28,6 +28,13 @@ import TrackerService from './admin/tracker/tracker.service';
 import UserOAuth2Service from '@/entities/user/user.oauth2.service';
 /* tslint:disable */
 
+import OrgUnitService from '@/entities/org-unit/org-unit.service';
+import DeviceTypeService from '@/entities/device-type/device-type.service';
+import DeviceService from '@/entities/device/device.service';
+import KeyPairService from '@/entities/key-pair/key-pair.service';
+import MessageTypeService from '@/entities/message-type/message-type.service';
+import MessageService from '@/entities/message/message.service';
+import ProcessorService from '@/entities/processor/processor.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -88,6 +95,13 @@ new Vue({
 
     userOAuth2Service: () => new UserOAuth2Service(),
     translationService: () => translationService,
+    orgUnitService: () => new OrgUnitService(),
+    deviceTypeService: () => new DeviceTypeService(),
+    deviceService: () => new DeviceService(),
+    keyPairService: () => new KeyPairService(),
+    messageTypeService: () => new MessageTypeService(),
+    messageService: () => new MessageService(),
+    processorService: () => new ProcessorService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

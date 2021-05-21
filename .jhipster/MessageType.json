@@ -1,0 +1,93 @@
+{
+  "name": "MessageType",
+  "fields": [
+    {
+      "fieldName": "typeCode",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "devToSrv",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "Unique name of the message type",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "javadoc": "Optional description"
+    },
+    {
+      "fieldName": "timeout",
+      "fieldType": "Duration",
+      "javadoc": "Minimum frequency for Dev->Srv and Sending timeout for Srv->Dev"
+    },
+    {
+      "fieldName": "retentionTime",
+      "fieldType": "Duration"
+    },
+    {
+      "fieldName": "indexFieldName01",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indexFieldName02",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indexFieldName03",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indexFieldName04",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "readAuthPattern",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "writeAuthPattern",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "processor",
+      "otherEntityRelationshipName": "messageType",
+      "relationshipName": "messageProcessor",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "processor",
+      "otherEntityRelationshipName": "messageType",
+      "relationshipName": "timeoutProcessor",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "deviceType",
+      "otherEntityRelationshipName": "messageTypes",
+      "relationshipName": "deviceTypes",
+      "otherEntityField": "name",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "iot_msg_type",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210521153829"
+}

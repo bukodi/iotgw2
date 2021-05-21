@@ -1,0 +1,33 @@
+{
+  "iotgw2App": {
+    "orgUnit": {
+      "home": {
+        "title": "OrgUnits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Egy új Org Unit létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Org Unitt",
+        "notFound": "No Org Units found"
+      },
+      "created": "Egy új Org Unit lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Org Unit módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Org Unit törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Org Unitt {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Org Unit"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "readAuthPattern": "Read Auth Pattern",
+      "writeAuthPattern": "Write Auth Pattern",
+      "subUnits": "Sub Units",
+      "parent": "Parent",
+      "help": {
+        "name": "Unique name of the device type",
+        "description": "Optional description"
+      }
+    }
+  }
+}

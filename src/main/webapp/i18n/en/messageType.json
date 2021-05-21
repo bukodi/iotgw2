@@ -1,0 +1,43 @@
+{
+  "iotgw2App": {
+    "messageType": {
+      "home": {
+        "title": "Message Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Message Type",
+        "createOrEditLabel": "Create or edit a Message Type",
+        "notFound": "No Message Types found"
+      },
+      "created": "A new Message Type is created with identifier {{ param }}",
+      "updated": "A Message Type is updated with identifier {{ param }}",
+      "deleted": "A Message Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Message Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Message Type"
+      },
+      "id": "ID",
+      "typeCode": "Type Code",
+      "devToSrv": "Dev To Srv",
+      "name": "Name",
+      "description": "Description",
+      "timeout": "Timeout",
+      "retentionTime": "Retention Time",
+      "indexFieldName01": "Index Field Name 01",
+      "indexFieldName02": "Index Field Name 02",
+      "indexFieldName03": "Index Field Name 03",
+      "indexFieldName04": "Index Field Name 04",
+      "readAuthPattern": "Read Auth Pattern",
+      "writeAuthPattern": "Write Auth Pattern",
+      "messageProcessor": "Message Processor",
+      "timeoutProcessor": "Timeout Processor",
+      "deviceTypes": "Device Types",
+      "help": {
+        "name": "Unique name of the message type",
+        "description": "Optional description",
+        "timeout": "Minimum frequency for Dev-&gt;Srv and Sending timeout for Srv-&gt;Dev"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "iotgw2App": {
+    "keyPair": {
+      "home": {
+        "title": "Key Pairs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Key Pair",
+        "createOrEditLabel": "Create or edit a Key Pair",
+        "notFound": "No Key Pairs found"
+      },
+      "created": "A new Key Pair is created with identifier {{ param }}",
+      "updated": "A Key Pair is updated with identifier {{ param }}",
+      "deleted": "A Key Pair is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Key Pair {{ id }}?"
+      },
+      "detail": {
+        "title": "Key Pair"
+      },
+      "id": "ID",
+      "keyId": "Key Id",
+      "algorithm": "Algorithm",
+      "publicKey": "Public Key",
+      "privateKeyDescriptor": "Private Key Descriptor",
+      "attestationData": "Attestation Data",
+      "associatedCert": "Associated Cert",
+      "certificateRequest": "Certificate Request",
+      "certSubjectDN": "Cert Subject DN",
+      "certIssuerDN": "Cert Issuer DN",
+      "certSerial": "Cert Serial",
+      "certNotBefore": "Cert Not Before",
+      "certNotAfter": "Cert Not After",
+      "certRevoked": "Cert Revoked",
+      "help": {
+        "keyId": "SHA-1 hash of the ANS.1 encoded publicKey. Lowercase hex string without spaces.",
+        "publicKey": "ANS.1 encoded public key",
+        "attestationData": "ANS.1 encoded public key",
+        "associatedCert": "ANS.1 encoded certificate",
+        "certificateRequest": "ANS.1 encoded PKCS#10"
+      }
+    }
+  }
+}

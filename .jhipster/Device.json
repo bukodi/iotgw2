@@ -1,0 +1,130 @@
+{
+  "name": "Device",
+  "fields": [
+    {
+      "fieldName": "visualId",
+      "fieldType": "String",
+      "javadoc": "Unique id of the IoT device",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "javadoc": "Optional description"
+    },
+    {
+      "fieldName": "enrollmentCode",
+      "fieldType": "String",
+      "javadoc": "Unique random passphrase for first-time enrollment."
+    },
+    {
+      "fieldName": "enrollmentTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "stateFieldValue01",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateFieldValue02",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateFieldValue03",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stateFieldValue04",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastError",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "readAuthPattern",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "writeAuthPattern",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "keyPair",
+      "otherEntityRelationshipName": "device",
+      "relationshipName": "deviceSignKey",
+      "otherEntityField": "keyId",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "keyPair",
+      "otherEntityRelationshipName": "device",
+      "relationshipName": "deviceEncKey",
+      "otherEntityField": "keyId",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "keyPair",
+      "otherEntityRelationshipName": "device",
+      "relationshipName": "serverSignKey",
+      "otherEntityField": "keyId",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "keyPair",
+      "otherEntityRelationshipName": "device",
+      "relationshipName": "serverEncKey",
+      "otherEntityField": "keyId",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "keyPair",
+      "otherEntityRelationshipName": "device",
+      "relationshipName": "nextServerSignKey",
+      "otherEntityField": "keyId",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "keyPair",
+      "otherEntityRelationshipName": "device",
+      "relationshipName": "nextServerEncKey",
+      "otherEntityField": "keyId",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "deviceType",
+      "otherEntityRelationshipName": "device",
+      "relationshipValidateRules": "required",
+      "relationshipName": "type",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "orgUnit",
+      "otherEntityRelationshipName": "device",
+      "relationshipValidateRules": "required",
+      "relationshipName": "orgUnit",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "iot_device",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210521153827"
+}

@@ -48,6 +48,16 @@ public class CacheConfiguration {
             createCache(cm, hu.noreg.iotgw2.domain.User.class.getName());
             createCache(cm, hu.noreg.iotgw2.domain.Authority.class.getName());
             createCache(cm, hu.noreg.iotgw2.domain.User.class.getName() + ".authorities");
+            createCache(cm, hu.noreg.iotgw2.domain.OrgUnit.class.getName());
+            createCache(cm, hu.noreg.iotgw2.domain.OrgUnit.class.getName() + ".subUnits");
+            createCache(cm, hu.noreg.iotgw2.domain.DeviceType.class.getName());
+            createCache(cm, hu.noreg.iotgw2.domain.DeviceType.class.getName() + ".messageTypes");
+            createCache(cm, hu.noreg.iotgw2.domain.Device.class.getName());
+            createCache(cm, hu.noreg.iotgw2.domain.KeyPair.class.getName());
+            createCache(cm, hu.noreg.iotgw2.domain.MessageType.class.getName());
+            createCache(cm, hu.noreg.iotgw2.domain.MessageType.class.getName() + ".deviceTypes");
+            createCache(cm, hu.noreg.iotgw2.domain.Message.class.getName());
+            createCache(cm, hu.noreg.iotgw2.domain.Processor.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

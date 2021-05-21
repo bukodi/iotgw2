@@ -1,0 +1,50 @@
+{
+  "name": "OrgUnit",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "Unique name of the device type",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "javadoc": "Optional description"
+    },
+    {
+      "fieldName": "readAuthPattern",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "writeAuthPattern",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "orgUnit",
+      "otherEntityRelationshipName": "parent",
+      "relationshipName": "subUnits",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "orgUnit",
+      "otherEntityRelationshipName": "subUnits",
+      "relationshipName": "parent",
+      "otherEntityField": "name"
+    }
+  ],
+  "entityTableName": "iot_org_unit",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210521153825"
+}
