@@ -1,0 +1,200 @@
+application {
+  config {
+    baseName iotgw
+    applicationType monolith
+    authenticationType jwt
+    blueprints [generator-jhipster-vuejs]
+    buildTool maven
+    cacheProvider no
+    clientFramework angularX
+    clientPackageManager npm
+    clientTheme flatly
+    databaseType sql
+    devDatabaseType h2Disk
+    dtoSuffix DTO
+    enableHibernateCache false
+    enableSwaggerCodegen true
+    enableTranslation true
+    languages [en, hu]
+    jhiPrefix jhi
+    messageBroker false
+    nativeLanguage en
+    packageName hu.noreg.margareta.iotgw
+    prodDatabaseType mysql
+    searchEngine false
+    serverPort 8080
+    serviceDiscoveryType false
+    skipClient false
+    skipServer false
+    skipUserManagement false
+    useSass true
+    websocket spring-websocket
+  }
+  entities *
+}
+
+
+/////////////////////////////////////////////////
+//
+//      Devices and KeyPairs
+//
+/////////////////////////////////////////////////
+enum PkAlgorithm {
+    RSA1024,
+    RSA2048,
+    RSA3072,
+    RSA4096,
+	P256
+}
+
+entity OrgUnit (iot_org_unit) {
+	name String required /** Unique name of the device type*/
+    description String /** Optional description */
+
+    readAuthPattern String
+    writeAuthPattern String
+}
+relationship OneToMany { OrgUnit{subUnits(name)} to OrgUnit{parent(name)} }
+
+entity DeviceType (iot_device_type) {
+	name String required unique /** Unique name of the device type*/
+    description String /** Optional description */
+
+	stateFieldName01 String
+	stateFieldName02 String
+	stateFieldName03 String
+	stateFieldName04 String
+
+    readAuthPattern String
+    writeAuthPattern String
+}
+
+entity Device (iot_device) {
+	visualId String required unique /** Unique id of the IoT device */
+    description String /** Optional description */
+
+	/** Unique random passphrase for first-time enrollment.  */
+	enrollmentCode String
+	enrollmentTime ZonedDateTime 
+
+	stateFieldValue01 String
+	stateFieldValue02 String
+	stateFieldValue03 String
+	stateFieldValue04 String
+
+    lastError TextBlob
+
+	readAuthPattern String
+    writeAuthPattern String
+}
+relationship ManyToOne { Device{type(name) required} to DeviceType }
+relationship ManyToOne { Device{orgUnit(name) required} to OrgUnit }
+
+entity KeyPair (iot_keypair) {
+	keyId String required /** SHA-1 hash of the ANS.1 encoded publicKey. Lowercase hex string without spaces.*/
+	algorithm PkAlgorithm required
+    publicKey Blob required /** ANS.1 encoded public key */
+    privateKeyDescriptor TextBlob
+    attestationData Blob /** ANS.1 encoded public key */
+    associatedCert Blob /** ANS.1 encoded certificate */
+    certificateRequest Blob /** ANS.1 encoded PKCS#10 */
+
+	certSubjectDN String 
+	certIssuerDN String 
+	certSerial String 
+    certNotBefore ZonedDateTime 
+    certNotAfter ZonedDateTime 
+    certRevoked ZonedDateTime
+}
+
+relationship OneToOne { Device{deviceSignKey(keyId)} to KeyPair}
+relationship OneToOne { Device{deviceEncKey(keyId)} to KeyPair}
+relationship OneToOne { Device{serverSignKey(keyId)} to KeyPair}
+relationship OneToOne { Device{serverEncKey(keyId)} to KeyPair}
+relationship OneToOne { Device{nextServerSignKey(keyId)} to KeyPair}
+relationship OneToOne { Device{nextServerEncKey(keyId)} to KeyPair}
+
+/////////////////////////////////////////////////
+//
+//      MessageTypes and Messages
+//
+/////////////////////////////////////////////////
+
+entity MessageType (iot_msg_type) {
+	typeCode Integer required
+    devToSrv Boolean required
+	name String required unique /** Unique name of the message type*/
+    description String /** Optional description */
+    timeout Duration /** Minimum frequency for Dev->Srv and Sending timeout for Srv->Dev */
+    retentionTime Duration
+
+	indexFieldName01 String
+	indexFieldName02 String
+	indexFieldName03 String
+	indexFieldName04 String
+
+    readAuthPattern String
+    writeAuthPattern String
+}
+relationship ManyToMany {  DeviceType{messageTypes(name)} to MessageType{deviceTypes(name)} }
+
+entity Message (iot_message) {
+	serverTime ZonedDateTime required
+	deviceTime ZonedDateTime 
+	rawMessageSHA256 String required /** Hash of the message. lower case hex string */
+    rawMessage Blob /** Optional original encrypted message */
+	decryptedPayload TextBlob
+    devToSrv Boolean required
+
+	indexFieldValue01 String
+	indexFieldValue02 String
+	indexFieldValue03 String
+	indexFieldValue04 String
+	
+    processingError TextBlob
+}
+relationship ManyToOne {  Message{type(name) required} to MessageType }
+relationship ManyToOne {  Message{device(visualId) required} to Device }
+
+/////////////////////////////////////////////////
+//
+//      Custom Algorithms
+//
+/////////////////////////////////////////////////
+entity Processor (iot_processor) {
+	name String required unique /** Unique name of the processor*/
+    example Boolean
+    description String /** Optional description */
+    processorIterface ProcessorInterface required
+    implType ImplemntationType required
+	param01 String
+	param02 String
+	source TextBlob
+    signerName String
+    signature Blob
+}
+relationship ManyToOne {  MessageType{messageProcessor(name)} to Processor }
+relationship ManyToOne {  MessageType{timeoutProcessor(name)} to Processor }
+relationship ManyToOne {  DeviceType{enrollProcessor(name)} to Processor }
+
+enum ProcessorInterface {
+    BeforeSendToDevice,
+    AfterRecivedFromDevice,
+    OnMessageTimeout,
+    OnMessageSendError,
+    OnExternalAPICall
+}
+
+enum ImplemntationType {
+    JavaCall,
+    GroovyScript,
+    JavaScript,
+    Blockly,
+    WebHook
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+filter * 
+
