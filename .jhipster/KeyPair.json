@@ -1,0 +1,82 @@
+{
+  "name": "KeyPair",
+  "fields": [
+    {
+      "fieldName": "keyId",
+      "fieldType": "String",
+      "javadoc": "SHA-1 hash of the ANS.1 encoded publicKey. Lowercase hex string without spaces.",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "algorithm",
+      "fieldType": "PkAlgorithm",
+      "fieldValues": "RSA1024,RSA2048,RSA3072,RSA4096,P256",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "publicKey",
+      "fieldType": "byte[]",
+      "javadoc": "ANS.1 encoded public key",
+      "fieldTypeBlobContent": "any",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "privateKeyDescriptor",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "attestationData",
+      "fieldType": "byte[]",
+      "javadoc": "ANS.1 encoded public key",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "associatedCert",
+      "fieldType": "byte[]",
+      "javadoc": "ANS.1 encoded certificate",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "certificateRequest",
+      "fieldType": "byte[]",
+      "javadoc": "ANS.1 encoded PKCS#10",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "certSubjectDN",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "certIssuerDN",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "certSerial",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "certNotBefore",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "certNotAfter",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "certRevoked",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "iot_keypair",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210521153828"
+}

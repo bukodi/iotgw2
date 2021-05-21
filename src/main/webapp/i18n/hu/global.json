@@ -7,6 +7,13 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entitások",
+        "orgUnit": "Org Unit",
+        "deviceType": "Device Type",
+        "device": "Device",
+        "keyPair": "Key Pair",
+        "messageType": "Message Type",
+        "message": "Message",
+        "processor": "Processor",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

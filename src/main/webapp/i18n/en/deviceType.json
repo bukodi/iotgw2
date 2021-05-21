@@ -1,0 +1,37 @@
+{
+  "iotgw2App": {
+    "deviceType": {
+      "home": {
+        "title": "Device Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Device Type",
+        "createOrEditLabel": "Create or edit a Device Type",
+        "notFound": "No Device Types found"
+      },
+      "created": "A new Device Type is created with identifier {{ param }}",
+      "updated": "A Device Type is updated with identifier {{ param }}",
+      "deleted": "A Device Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Device Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Device Type"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "stateFieldName01": "State Field Name 01",
+      "stateFieldName02": "State Field Name 02",
+      "stateFieldName03": "State Field Name 03",
+      "stateFieldName04": "State Field Name 04",
+      "readAuthPattern": "Read Auth Pattern",
+      "writeAuthPattern": "Write Auth Pattern",
+      "enrollProcessor": "Enroll Processor",
+      "messageTypes": "Message Types",
+      "help": {
+        "name": "Unique name of the device type",
+        "description": "Optional description"
+      }
+    }
+  }
+}

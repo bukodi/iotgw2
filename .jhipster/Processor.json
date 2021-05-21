@@ -1,0 +1,65 @@
+{
+  "name": "Processor",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "Unique name of the processor",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "example",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "javadoc": "Optional description"
+    },
+    {
+      "fieldName": "processorIterface",
+      "fieldType": "ProcessorInterface",
+      "fieldValues": "BeforeSendToDevice,AfterRecivedFromDevice,OnMessageTimeout,OnMessageSendError,OnExternalAPICall",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "implType",
+      "fieldType": "ImplemntationType",
+      "fieldValues": "JavaCall,GroovyScript,JavaScript,Blockly,WebHook",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "param01",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "param02",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "source",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "signerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "signature",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "iot_processor",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210521153831"
+}

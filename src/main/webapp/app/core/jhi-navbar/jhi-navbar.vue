@@ -29,6 +29,34 @@
             <font-awesome-icon icon="th-list" />
             <span class="no-bold" v-text="$t('global.menu.entities.main')">Entities</span>
           </span>
+          <b-dropdown-item to="/org-unit">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.orgUnit')">Org Unit</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/device-type">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.deviceType')">Device Type</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/device">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.device')">Device</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/key-pair">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.keyPair')">Key Pair</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/message-type">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.messageType')">Message Type</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/message">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.message')">Message</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/processor">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.processor')">Processor</span>
+          </b-dropdown-item>
           <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
         </b-nav-item-dropdown>
         <b-nav-item-dropdown

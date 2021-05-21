@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Message.
+    -->
+    <changeSet id="20210521153830-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="type_id"
+                                 baseTableName="iot_message"
+                                 constraintName="fk_iot_message__type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="iot_msg_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="device_id"
+                                 baseTableName="iot_message"
+                                 constraintName="fk_iot_message__device_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="iot_device"/>
+    </changeSet>
+</databaseChangeLog>

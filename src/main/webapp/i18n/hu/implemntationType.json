@@ -1,0 +1,12 @@
+{
+  "iotgw2App": {
+    "ImplemntationType": {
+      "null": "",
+      "JavaCall": "JavaCall",
+      "GroovyScript": "GroovyScript",
+      "JavaScript": "JavaScript",
+      "Blockly": "Blockly",
+      "WebHook": "WebHook"
+    }
+  }
+}

@@ -42,7 +42,9 @@
     "jwtSecretKey": "ODZjMDU0NmVhMzkyZGZjNDdiMjIzNWMwMjZkYzNmNTI1OTU2N2EwYzlhN2JhYTcwYTM2N2UxMzA1YzAxZDUxNjY1Nzg5YzAzMWU2MmM5Mjk5OWMxNTFkMmMxN2Q0ZWE0ZGM0Y2JjN2IwNDY1MmMwODFlMmI0MDQ5Zjc2MWEyYTE=",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false
+    "reactive": false,
+    "entities": ["OrgUnit", "DeviceType", "Device", "KeyPair", "MessageType", "Message", "Processor"],
+    "lastLiquibaseTimestamp": 1621611511000
   },
   "git-provider": "GitHub",
   "git-company": "bukodi",

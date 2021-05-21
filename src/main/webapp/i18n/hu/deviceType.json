@@ -1,0 +1,37 @@
+{
+  "iotgw2App": {
+    "deviceType": {
+      "home": {
+        "title": "DeviceTypes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Egy új Device Type létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Device Typet",
+        "notFound": "No Device Types found"
+      },
+      "created": "Egy új Device Type lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Device Type módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Device Type törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Device Typet {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Device Type"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "stateFieldName01": "State Field Name 01",
+      "stateFieldName02": "State Field Name 02",
+      "stateFieldName03": "State Field Name 03",
+      "stateFieldName04": "State Field Name 04",
+      "readAuthPattern": "Read Auth Pattern",
+      "writeAuthPattern": "Write Auth Pattern",
+      "enrollProcessor": "Enroll Processor",
+      "messageTypes": "Message Types",
+      "help": {
+        "name": "Unique name of the device type",
+        "description": "Optional description"
+      }
+    }
+  }
+}
